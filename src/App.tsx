@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 import { ThemeProvider } from 'styled-components';
 import light from './themes/light'
-import dark from './themes/light'
+import dark from './themes/dark'
 import Home from './pages/Home';
 import GlobalStyled from './themes/global';
 
@@ -11,9 +11,9 @@ function App() {
     setTheme(theme.title === 'light' ? dark : light)
   }
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <GlobalStyled/>
-      <Home/>
+      <Home toggleTheme={toggleTheme}/>
     </ThemeProvider>
   )
 }
